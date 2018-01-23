@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-paths",
+  "name": "paths.macro",
   "version": "1.0.0",
   "description": "Babel plugin that returns an object containing paths like __dirname and __filename as static values",
   "keywords": [

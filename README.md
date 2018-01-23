@@ -1,4 +1,4 @@
-# babel-plugin-transform-dirname-filename
+# babel-plugin-paths
 
 Babel macro that allows you to "import" the location of the source-file.
 

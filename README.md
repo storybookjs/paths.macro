@@ -1,4 +1,4 @@
-# babel paths.macro
+# Babel paths.macro
 
 A [babel macro](https://github.com/kentcdodds/babel-plugin-macros) that allows you to "import" the location of the source-file.
 

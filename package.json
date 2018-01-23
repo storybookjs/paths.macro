@@ -1,0 +1,38 @@
+{
+  "name": "babel-plugin-paths",
+  "version": "1.0.0",
+  "description": "Babel plugin that returns an object containing paths like __dirname and __filename as static values",
+  "keywords": [
+    "__dirname",
+    "__filename",
+    "babel",
+    "babel-plugin-macros",
+    "base",
+    "extention",
+    "file",
+    "filename",
+    "gitRoot",
+    "npmRoot",
+    "path",
+    "paths",
+    "plugin",
+    "static",
+    "value",
+    "working directory"
+  ],
+  "license": "MIT",
+  "author": "Norbert de Langen",
+  "main": "macro.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel-macros": "^1.2.0",
+    "babel-plugin-macros": "^2.0.0",
+    "find-root": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "jest": "^22.1.4"
+  }
+}

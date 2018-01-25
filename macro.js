@@ -3,9 +3,10 @@ const fs = require('fs');
 
 const findRoot = require('find-root');
 const { createMacro } = require('babel-macros');
+const { toUnix } = require('upath');
 
 const getPaths = f => {
-  const _fileAbsolute = path.resolve(f);
+  const _fileAbsolute = toUnix(path.resolve(f));
   const _file = path.basename(_fileAbsolute);
   const _extention = path.extname(_fileAbsolute)
   
@@ -13,7 +14,7 @@ const getPaths = f => {
   
   const _npmRoot = findRootAttempt(_fileAbsolute);
   const _gitRoot = findRootAttempt(_fileAbsolute, (dir) => fs.existsSync(path.resolve(dir, '.git')));
-  const _wd = process.cwd();
+  const _wd = toUnix(process.cwd());
   
   const _baseAbsolute = _fileAbsolute.replace(_file, '');
   const _base = _baseAbsolute.replace(_npmRoot, '');

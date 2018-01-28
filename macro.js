@@ -6,14 +6,15 @@ const { createMacro } = require('babel-macros');
 const { toUnix } = require('upath');
 
 const getPaths = f => {
-  const _fileAbsolute = toUnix(path.resolve(f));
+  const _osDependentAbsolute = path.resolve(f);
+  const _fileAbsolute = toUnix(_osDependentAbsolute);
   const _file = path.basename(_fileAbsolute);
   const _extention = path.extname(_fileAbsolute);
   
   const _filename = _file.replace(_extention, '');
   
-  const _npmRoot = toUnix(findRootAttempt(_fileAbsolute));
-  const _gitRoot = toUnix(findRootAttempt(_fileAbsolute, (dir) => fs.existsSync(path.resolve(dir, '.git'))));
+  const _npmRoot = toUnix(findRootAttempt(_osDependentAbsolute));
+  const _gitRoot = toUnix(findRootAttempt(_osDependentAbsolute, (dir) => fs.existsSync(path.resolve(dir, '.git'))));
   const _wd = toUnix(process.cwd());
   
   const _baseAbsolute = _fileAbsolute.replace(_file, '');

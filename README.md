@@ -51,7 +51,7 @@ function usePathsForSomething() {
 Install:
 
 ```sh
-yarn add babel-plugin-module-paths
+yarn add paths.macro
 ```
 
 If you don't have babel-macros already you must also install that:

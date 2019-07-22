@@ -6,4 +6,4 @@ alert(filename, base);
 
 function usePathsForSomething() {
   return [filename, base];
-};
+}

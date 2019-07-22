@@ -11,7 +11,7 @@ gitRoot      | `/Users/you/project`
 wd           | `/Users/you/project`
 fileAbsolute | `/Users/you/project/src/input.js`
 file         | `input.js`
-extention    | `.js`
+extension    | `.js`
 filename     | `input`
 baseAbsolute | `/Users/you/project/src/`
 base         | `/src/`
@@ -23,7 +23,7 @@ The default import is equal to `base`.
 Source file `input.js`:
 
 ```js
-import base, { filename } from 'babel-plugin-module-paths/paths.macro';
+import base, { filename } from 'paths.macro';
 
 console.log(base, filename);
 
@@ -31,7 +31,7 @@ alert(filename, base);
 
 function usePathsForSomething() {
   return [filename, base];
-};
+}
 ```
 
 Output:
@@ -43,7 +43,7 @@ alert("input", "/src/");
 
 function usePathsForSomething() {
   return ["input", "/src/"];
-};
+}
 ```
 
 ## Config

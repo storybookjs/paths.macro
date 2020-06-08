@@ -9,14 +9,18 @@ const getPaths = f => {
   const _osDependentAbsolute = path.resolve(f);
   const _fileAbsolute = toUnix(_osDependentAbsolute);
   const _file = path.basename(_fileAbsolute);
-  const _extention = path.extname(_fileAbsolute);
-  
-  const _filename = _file.replace(_extention, '');
-  
+  const _extension = path.extname(_fileAbsolute);
+
+  const _filename = _file.replace(_extension, '');
+
   const _npmRoot = toUnix(findRootAttempt(_osDependentAbsolute));
-  const _gitRoot = toUnix(findRootAttempt(_osDependentAbsolute, (dir) => fs.existsSync(path.resolve(dir, '.git'))));
+  const _gitRoot = toUnix(
+    findRootAttempt(_osDependentAbsolute, dir =>
+      fs.existsSync(path.resolve(dir, '.git')),
+    ),
+  );
   const _wd = toUnix(process.cwd());
-  
+
   const _baseAbsolute = _fileAbsolute.replace(_file, '');
   const _base = _baseAbsolute.replace(_npmRoot, '');
 
@@ -26,7 +30,7 @@ const getPaths = f => {
     wd: _wd,
     fileAbsolute: _fileAbsolute,
     file: _file,
-    extention: _extention,
+    extension: _extension,
     filename: _filename,
     baseAbsolute: _baseAbsolute,
     base: _base,
@@ -52,7 +56,7 @@ const macro = ({ references, state }) => {
     list.forEach(reference => {
       reference.replaceWithSourceString(JSON.stringify(value));
     });
-  })
+  });
 };
 
 module.exports = createMacro(macro);

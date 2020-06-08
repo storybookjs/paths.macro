@@ -27,13 +27,12 @@
     "test": "jest"
   },
   "dependencies": {
-    "babel-macros": "^1.2.0",
-    "babel-plugin-macros": "^2.0.0",
+    "babel-plugin-macros": "^2.8.0",
     "find-root": "^1.1.0",
-    "upath": "^1.0.2"
+    "upath": "^1.2.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "jest": "^22.1.4"
+    "@babel/core": "^7.10.2",
+    "jest": "^26.0.1"
   }
 }

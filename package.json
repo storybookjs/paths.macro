@@ -23,6 +23,7 @@
   "license": "MIT",
   "author": "Norbert de Langen",
   "main": "macro.js",
+  "types": "macro.d.ts",
   "scripts": {
     "test": "jest"
   },

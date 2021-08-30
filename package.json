@@ -1,6 +1,10 @@
 {
   "name": "paths.macro",
   "version": "3.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/paths.macro.git",
+  },
   "description": "Babel plugin that returns an object containing paths like __dirname and __filename as static values",
   "keywords": [
     "__dirname",
